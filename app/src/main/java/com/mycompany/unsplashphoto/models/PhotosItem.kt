@@ -1,4 +1,4 @@
-package com.mycompany.unsplashphoto.mudel
+package com.mycompany.unsplashphoto.models
 
 data class PhotosItem(
     val blur_hash: String,
