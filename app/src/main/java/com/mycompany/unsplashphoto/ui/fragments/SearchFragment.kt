@@ -10,8 +10,6 @@ import androidx.lifecycle.Observer
 import com.mycompany.unsplashphoto.R
 import com.mycompany.unsplashphoto.adapters.PhotoAdapter
 import com.mycompany.unsplashphoto.databinding.FragementSearchBinding
-import com.mycompany.unsplashphoto.di.Bindings
-import com.mycompany.unsplashphoto.models.PhotosItem
 import com.mycompany.unsplashphoto.ui.PhotosViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,13 +31,18 @@ class SearchFragment: Fragment(R.layout.fragement_search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         connectData()
+        viewModel.setPhotos()
+        viewModel.photos.observe(viewLifecycleOwner, Observer {
+            binding.tvMain.text=it[0].color
+        })
     }
 
     private fun connectData(){
         viewModel.setPhotos()
         viewModel.photos.observe(viewLifecycleOwner, Observer {
+            val list=it.toList()
             setRecyclerView()
-            photoAdapter.differ.submitList(it)
+            photoAdapter.differ.submitList(list)
         })
     }
 

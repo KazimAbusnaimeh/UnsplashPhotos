@@ -4,6 +4,7 @@ data class PhotosItem(
     val blur_hash: String,
     val color: String,
     val created_at: String,
+    val current_user_collections: List<CurrentUserCollection>,
     val description: String,
     val height: Int,
     val id: String,
