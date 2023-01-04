@@ -14,8 +14,8 @@ import com.mycompany.unsplashphoto.ui.PhotosViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SearchFragment: Fragment(R.layout.fragement_search) {
-    private val viewModel:PhotosViewModel by hiltNavGraphViewModels(R.id.nav_graph)
+class SearchFragment : Fragment(R.layout.fragement_search) {
+    private val viewModel: PhotosViewModel by hiltNavGraphViewModels(R.id.nav_graph)
     lateinit var binding: FragementSearchBinding
     lateinit var photoAdapter: PhotoAdapter
     override fun onCreateView(
@@ -23,7 +23,7 @@ class SearchFragment: Fragment(R.layout.fragement_search) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding=FragementSearchBinding.inflate(layoutInflater)
+        binding = FragementSearchBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -31,25 +31,21 @@ class SearchFragment: Fragment(R.layout.fragement_search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         connectData()
-        viewModel.setPhotos()
-        viewModel.photos.observe(viewLifecycleOwner, Observer {
-            binding.tvMain.text=it[0].color
-        })
     }
 
-    private fun connectData(){
+    private fun connectData() {
         viewModel.setPhotos()
         viewModel.photos.observe(viewLifecycleOwner, Observer {
-            val list=it.toList()
+            val list = it.toList()
             setRecyclerView()
             photoAdapter.differ.submitList(list)
         })
     }
 
-    private fun setRecyclerView(){
-        photoAdapter= PhotoAdapter()
+    private fun setRecyclerView() {
+        photoAdapter = PhotoAdapter()
         binding.rvSearch.apply {
-            adapter=photoAdapter
+            adapter = photoAdapter
         }
     }
 }
