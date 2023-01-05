@@ -10,5 +10,5 @@ interface Api {
 
     @Headers("Accept-Version: v1", "Authorization: Client-ID $ACCESS_KEY")
     @GET("photos")
-    fun getPhotos(): Call<Photos>
+    suspend fun getPhotos(): Photos
 }

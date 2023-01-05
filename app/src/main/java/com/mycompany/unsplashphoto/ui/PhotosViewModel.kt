@@ -20,15 +20,7 @@ class PhotosViewModel @Inject constructor(private val repository: Repository) : 
 
      fun setPhotos() {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.getPhotos().enqueue(object : Callback<Photos?> {
-                override fun onResponse(call: Call<Photos?>, response: Response<Photos?>) {
-                    photos.postValue(response.body())
-                }
-
-                override fun onFailure(call: Call<Photos?>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
-            })
+            photos.postValue(repository.getPhotos())
         }
     }
 }

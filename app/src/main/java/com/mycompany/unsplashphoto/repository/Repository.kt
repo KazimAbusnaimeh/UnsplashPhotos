@@ -6,7 +6,7 @@ import retrofit2.Call
 import javax.inject.Inject
 
 class Repository @Inject constructor(private val api: Api) {
-    suspend fun getPhotos(): Call<Photos> {
+    suspend fun getPhotos(): Photos {
         return api.getPhotos()
     }
 }
