@@ -25,6 +25,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_user_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_user_name">
+
+                <ImageView
+                    android:id="@+id/iv_user_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:photo="@{data.user.profile_image.large}"
+                    tools:ignore="ContentDescription" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="4dp"
+                android:text="@{data.user.name}"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/cv_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="name" />
+
             <ImageView
                 android:id="@+id/iv_photo"
                 android:layout_width="match_parent"
@@ -34,7 +67,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
-                app:photo="@{data.urls.regular}" />
+                app:photo="@{data.urls.regular}"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tv_likes"
@@ -62,27 +96,15 @@
                 app:layout_constraintStart_toEndOf="@id/tv_likes"
                 app:layout_constraintTop_toBottomOf="@+id/iv_photo"
                 app:liked="@{data.liked_by_user}"
+                tools:ignore="ContentDescription"
                 tools:src="@drawable/ic_liked" />
 
-            <TextView
-                android:id="@+id/tv_user_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:padding="4dp"
-                android:text="@{data.user.name}"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="name" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="4dp"
-                android:text="@{data.created_at}"
+                app:dateText="@{data.created_at}"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

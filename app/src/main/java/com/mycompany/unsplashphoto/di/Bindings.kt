@@ -7,6 +7,7 @@ import android.text.Layout
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.compose.animation.VectorConverter
 import androidx.compose.ui.graphics.Color
@@ -39,6 +40,13 @@ fun liked(imageView: ImageView, boolean: Boolean) {
 fun background(layout: View, boolean: String) {
     val int=  android.graphics.Color.parseColor(boolean)
    layout.setBackgroundColor(int)
+}
+
+@BindingAdapter("app:dateText")
+fun dateText(view: TextView, text: String) {
+   val sText=text.split("T")
+    val date=sText[0]
+    view.text="$date"
 }
 
 
