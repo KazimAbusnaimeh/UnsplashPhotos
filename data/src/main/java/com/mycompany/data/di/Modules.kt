@@ -1,7 +1,7 @@
-package com.mycompany.unsplashphoto.di
+package com.mycompany.data.di
 
-import com.mycompany.unsplashphoto.datasource.Api
-import com.mycompany.unsplashphoto.utils.Constants
+import com.mycompany.data.datasource.Api
+import com.mycompany.data.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

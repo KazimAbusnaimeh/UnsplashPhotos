@@ -1,4 +1,4 @@
-package com.mycompany.unsplashphoto.models
+package com.mycompany.data.models
 
 data class LinksX(
     val html: String,

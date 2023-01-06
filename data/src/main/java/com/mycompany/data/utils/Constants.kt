@@ -1,4 +1,4 @@
-package com.mycompany.unsplashphoto.utils
+package com.mycompany.data.utils
 
 object Constants {
     const val ACCESS_KEY = "qM_ccL55AazIQD4tuJwvaawpGQ-iqH9lp_RXuPCngvk"

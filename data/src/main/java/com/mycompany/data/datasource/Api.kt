@@ -1,8 +1,7 @@
-package com.mycompany.unsplashphoto.datasource
+package com.mycompany.data.datasource
 
-import com.mycompany.unsplashphoto.models.Photos
-import com.mycompany.unsplashphoto.utils.Constants.ACCESS_KEY
-import retrofit2.Call
+import com.mycompany.data.models.Photos
+import com.mycompany.data.utils.Constants.ACCESS_KEY
 import retrofit2.http.GET
 import retrofit2.http.Headers
 

@@ -7,7 +7,7 @@
 
         <variable
             name="data"
-            type="com.mycompany.unsplashphoto.models.PhotosItem" />
+            type="com.mycompany.data.models.PhotosItem" />
     </data>
 
     <androidx.cardview.widget.CardView

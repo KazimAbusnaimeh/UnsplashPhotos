@@ -1,4 +1,6 @@
-package com.mycompany.unsplashphoto.models
+package com.mycompany.data.models
+
+import com.mycompany.unsplashphoto.models.ProfileImage
 
 data class User(
     val bio: String,

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.mycompany.unsplashphoto.databinding.ItemPhotoBinding
-import com.mycompany.unsplashphoto.models.PhotosItem
+import com.mycompany.data.models.PhotosItem
 
 class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
 
