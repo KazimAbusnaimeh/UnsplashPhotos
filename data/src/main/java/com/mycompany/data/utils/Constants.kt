@@ -1,6 +1,9 @@
 package com.mycompany.data.utils
 
+import com.mycompany.data.BuildConfig
+
+
 object Constants {
-    const val ACCESS_KEY = "qM_ccL55AazIQD4tuJwvaawpGQ-iqH9lp_RXuPCngvk"
-    const val BASE_URL = "https://api.unsplash.com/"
+    const val ACCESS_KEY = BuildConfig.API_KEY
+    const val BASE_URL = BuildConfig.BASE_URL
 }
