@@ -1,6 +1,6 @@
 package com.mycompany.data.di
 
-import com.mycompany.data.datasource.Api
+import com.mycompany.data.datasource.PhotosApi
 import com.mycompany.data.utils.Constants
 import dagger.Module
 import dagger.Provides
@@ -14,9 +14,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 object Modules {
 
     @Provides
-    fun getApi(): Api {
+    fun getApi(): PhotosApi {
         return Retrofit.Builder().baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .build().create(Api::class.java)
+            .build().create(PhotosApi::class.java)
     }
 }

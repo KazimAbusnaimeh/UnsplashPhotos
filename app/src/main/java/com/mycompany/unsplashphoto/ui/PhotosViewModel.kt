@@ -4,20 +4,28 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mycompany.data.models.Photos
-import com.mycompany.data.repository.Repository
+import com.mycompany.data.repository.PhotosRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class PhotosViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
+class PhotosViewModel @Inject constructor(private val photosRepository: PhotosRepository) : ViewModel() {
 
-     val photos: MutableLiveData<Photos> = MutableLiveData()
+    val photos: MutableLiveData<Photos> = MutableLiveData()
+    val loading: MutableLiveData<Boolean> = MutableLiveData()
+    val error: MutableLiveData<String> = MutableLiveData()
 
-     fun setPhotos() {
+    fun setPhotos() {
         viewModelScope.launch(Dispatchers.IO) {
-            photos.postValue(repository.getPhotos())
+            loading.postValue(true)
+            try {
+                photos.postValue(photosRepository.getPhotos())
+            } catch (e: Exception) {
+                error.postValue(e.message)
+            }
+            loading.postValue(false)
         }
     }
 }

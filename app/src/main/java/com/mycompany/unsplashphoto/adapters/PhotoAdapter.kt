@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.mycompany.unsplashphoto.databinding.ItemPhotoBinding
 import com.mycompany.data.models.PhotosItem
+import com.mycompany.unsplashphoto.databinding.ItemPhotoBinding
 
 class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
 
@@ -42,7 +42,7 @@ class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
 
     inner class PhotoViewHolder(private val binding: ItemPhotoBinding) : ViewHolder(binding.root) {
         fun bind(item: PhotosItem) {
-            binding.data = item;
+            binding.data = item
         }
     }
 }

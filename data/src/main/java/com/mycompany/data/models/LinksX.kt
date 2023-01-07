@@ -1,6 +1,8 @@
 package com.mycompany.data.models
 
 data class LinksX(
+    val followers: String,
+    val following: String,
     val html: String,
     val likes: String,
     val photos: String,

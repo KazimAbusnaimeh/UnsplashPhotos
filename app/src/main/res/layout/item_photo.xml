@@ -23,7 +23,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/purple_700">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_icon"
@@ -52,8 +53,9 @@
                 android:layout_marginTop="8dp"
                 android:padding="4dp"
                 android:text="@{data.user.name}"
-                android:textColor="#000000"
+                android:textColor="#ffffff"
                 android:textSize="15sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/cv_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="name" />
@@ -78,7 +80,7 @@
                 android:gravity="center"
                 android:padding="4dp"
                 android:text="@{String.valueOf(data.likes)}"
-                android:textColor="#000000"
+                android:textColor="#ffffff"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_like"
                 app:layout_constraintStart_toStartOf="parent"
@@ -96,6 +98,7 @@
                 app:layout_constraintStart_toEndOf="@id/tv_likes"
                 app:layout_constraintTop_toBottomOf="@+id/iv_photo"
                 app:liked="@{data.liked_by_user}"
+                app:tint="@color/white"
                 tools:ignore="ContentDescription"
                 tools:src="@drawable/ic_liked" />
 
@@ -104,8 +107,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="4dp"
-                app:dateText="@{data.created_at}"
+                android:textColor="#ffffff"
                 android:textSize="12sp"
+                app:dateText="@{data.created_at}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_photo"
