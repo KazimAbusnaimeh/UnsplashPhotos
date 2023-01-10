@@ -1,22 +1,16 @@
 package com.mycompany.data.models
 
+import com.google.gson.annotations.SerializedName
+
 data class PhotosItem(
-    val alt_description: String,
-    val blur_hash: String,
-    val color: String,
-    val created_at: String,
-    val current_user_collections: List<Any>,
-    val description: Any,
-    val height: Int,
+    @SerializedName("created_at")
+    val createdAt: String,
+    @SerializedName("id")
     val id: String,
-    val liked_by_user: Boolean,
+    @SerializedName("likes")
     val likes: Int,
-    val links: Links,
-    val promoted_at: String,
-    val sponsorship: Sponsorship,
-    val topic_submissions: TopicSubmissions,
-    val updated_at: String,
+    @SerializedName("urls")
     val urls: Urls,
-    val user: User,
-    val width: Int
+    @SerializedName("user")
+    val user: User
 )

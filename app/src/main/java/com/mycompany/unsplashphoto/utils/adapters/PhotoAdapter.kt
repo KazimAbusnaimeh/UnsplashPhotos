@@ -1,4 +1,4 @@
-package com.mycompany.unsplashphoto.adapters
+package com.mycompany.unsplashphoto.utils.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -43,6 +43,7 @@ class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
     inner class PhotoViewHolder(private val binding: ItemPhotoBinding) : ViewHolder(binding.root) {
         fun bind(item: PhotosItem) {
             binding.data = item
+            binding.splitText="T"
         }
     }
 }

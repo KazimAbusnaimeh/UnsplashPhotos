@@ -9,9 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import com.mycompany.data.models.PhotosItem
 import com.mycompany.unsplashphoto.R
-import com.mycompany.unsplashphoto.adapters.PhotoAdapter
+import com.mycompany.unsplashphoto.utils.adapters.PhotoAdapter
 import com.mycompany.unsplashphoto.databinding.FragementPhotosBinding
-import com.mycompany.unsplashphoto.ui.PhotosViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,9 +19,7 @@ class PhotosFragment : Fragment(R.layout.fragement_photos) {
     lateinit var binding: FragementPhotosBinding
     lateinit var photoAdapter: PhotoAdapter
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = FragementPhotosBinding.inflate(layoutInflater)
         return binding.root
@@ -57,8 +54,6 @@ class PhotosFragment : Fragment(R.layout.fragement_photos) {
 
     private fun setupRecyclerView() {
         photoAdapter = PhotoAdapter()
-        binding.rvPhotos.apply {
-            adapter = photoAdapter
-        }
+        binding.rvPhotos.adapter = photoAdapter
     }
 }

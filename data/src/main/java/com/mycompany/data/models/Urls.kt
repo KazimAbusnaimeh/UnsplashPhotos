@@ -1,10 +1,8 @@
 package com.mycompany.data.models
 
+import com.google.gson.annotations.SerializedName
+
 data class Urls(
-    val full: String,
-    val raw: String,
-    val regular: String,
-    val small: String,
-    val small_s3: String,
-    val thumb: String
+    @SerializedName("regular")
+    val regular: String
 )

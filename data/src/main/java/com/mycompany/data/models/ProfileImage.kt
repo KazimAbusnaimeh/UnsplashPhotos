@@ -1,7 +1,8 @@
 package com.mycompany.data.models
 
+import com.google.gson.annotations.SerializedName
+
 data class ProfileImage(
-    val large: String,
-    val medium: String,
-    val small: String
+    @SerializedName("large")
+    val large: String
 )

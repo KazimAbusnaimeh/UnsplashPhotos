@@ -1,4 +1,4 @@
-package com.mycompany.unsplashphoto.ui
+package com.mycompany.unsplashphoto.ui.fragments
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
